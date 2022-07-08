@@ -1,0 +1,58 @@
+[
+  {
+    "title": "car1",
+    "brand": "bmw",
+    "image": {
+      "id": 1,
+      "filename": "..."
+    },
+    "price": {
+      "one": "String1",
+      "two": "String1",
+      "third": "String1",
+      "fourth": "String1"
+    }
+  },
+  {
+    "title": "car2",
+    "brand": "mers",
+    "image": {
+      "id": 2,
+      "filename": "..."
+    },
+    "price": {
+      "one": "String2",
+      "two": "String2",
+      "third": "String2",
+      "fourth": "String2"
+    }
+  },
+  {
+    "title": "car3",
+    "brand": "audi",
+    "image": {
+      "id": 3,
+      "filename": "..."
+    },
+    "price": {
+      "one": "String3",
+      "two": "String3",
+      "third": "String3",
+      "fourth": "String3"
+    }
+  },
+  {
+    "title": "car4",
+    "brand": "beha",
+    "image": {
+      "id": 4,
+      "filename": "..."
+    },
+    "price": {
+      "one": "String4",
+      "two": "String4",
+      "third": "String4",
+      "fourth": "String4"
+    }
+  }
+]

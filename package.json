@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "nodemon app.js"
+    "start:server": "nodemon app.js",
+    "database-up": "migrate-mongo up -f ./migrate-mongo-config.js",
+    "database-down": "migrate-mongo down -f ./migrate-mongo-config.js",
+    "database-status": "migrate-mongo status -f ./migrate-mongo-config.js"
   },
   "repository": {
     "type": "git",

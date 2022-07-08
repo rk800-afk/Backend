@@ -3,7 +3,7 @@ const path = require('path');
 const config = {
   mongodb: {
     databaseName: 'rom-car',
-    url: 'mongodb://localhost:27017/',
+    url: 'mongodb://127.0.0.1:27017/',
     options: {
       useNewUrlParser: true,
       useUnifiedTopology: true
