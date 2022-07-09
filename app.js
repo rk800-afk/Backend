@@ -1,8 +1,11 @@
 const http = require('http')
 const express = require('express')
 const cors = require('cors')
+const bodyParser = require('body-parser');
+const mutler = require('multer')
 
 const database = require('./db')
+const upload = mutler()
 
 const app = express()
 
@@ -16,8 +19,18 @@ const bootstrap = () => {
             origin: '*',
         })
     );
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: true }));
+    // app.use(express.json());
+    // app.use(express.urlencoded({ extended: true }));
+
+    // for parsing application/json
+    app.use(bodyParser.json()); 
+
+    // for parsing application/xwww-
+    app.use(bodyParser.urlencoded({ extended: true })); 
+    //form-urlencoded
+
+    // for parsing multipart/form-data
+    app.use(upload.single('image')); 
 
     // API'S
     require('./api')(app)

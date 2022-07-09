@@ -13,7 +13,8 @@ const getStorage = (url) => {
       return new Promise((resolve, reject) => {
         crypto.randomBytes(16, (err, buf) => {
           if (err) {
-            return reject(err);
+              console.log(err);
+              return reject(err);
           }
 
           const filename =
@@ -23,6 +24,8 @@ const getStorage = (url) => {
             filename: filename,
             bucketName: 'image'
           };
+
+          console.log(fileInfo);
 
           resolve(fileInfo);
         });

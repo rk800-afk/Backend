@@ -14,6 +14,9 @@ const router = express.Router();
 // // Route for receiving image
 // // router.get('/:imageName', controller.getImage);
 
+// Route for receiving image
+router.get('/:imageName', controller.getImage);
+
 // Route for creating image
 router.post(
   '/:carId',

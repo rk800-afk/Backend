@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { gridFSBucketService } = require('../shared/services/grid-fs-bucket');
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/"
 const MONGO_DB = "rom-car";
@@ -16,6 +17,7 @@ function createConnection() {
       console.log(`\u001b[1;31m\nDatabase error: ${error}`)
     );
     connection.once('open', () => {
+      gridFSBucketService.init(connection.db)
       console.log(
         '\u001b[1;32m\nConnection to database established'
       );
