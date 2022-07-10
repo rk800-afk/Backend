@@ -23,17 +23,25 @@ const bootstrap = () => {
     // app.use(express.urlencoded({ extended: true }));
 
     // for parsing application/json
-    app.use(bodyParser.json()); 
+    app.use(bodyParser.json());
 
     // for parsing application/xwww-
-    app.use(bodyParser.urlencoded({ extended: true })); 
+    app.use(bodyParser.urlencoded({ extended: true }));
     //form-urlencoded
 
     // for parsing multipart/form-data
-    app.use(upload.single('image')); 
+    // app.use(upload.single('file'));
 
     // API'S
     require('./api')(app)
+
+    app.get('*', (_req, res) => {
+        res.sendFile(
+            path.resolve(
+                __dirname + '/images',
+            )
+        );
+    });
 
     server.listen(PORT, () => {
         console.log("Start", PORT);

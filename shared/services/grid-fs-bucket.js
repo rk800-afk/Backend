@@ -1,4 +1,6 @@
+const mongodb = require('mongodb');
 const mongoose = require('mongoose');
+const Grid = require('gridfs-stream');
 
 class GridFSBucketService {
   get find() {
@@ -13,9 +15,21 @@ class GridFSBucketService {
     return this.gfs.openDownloadStreamByName;
   }
 
+  readStream(filename, res) {
+    return this.gfs.createReadStream(filename).pipe(res);
+  }
+
+  filesFindAll() {
+    return this.gfs.files.find;
+  }
+
+  filesFindOne() {
+    return this.gfs.files.findOne;
+  }
+
   init(db) {
-    this.gfs = new mongoose.mongo.GridFSBucket(db, {
-      bucketName: 'image'
+    this.gfs = new mongodb.GridFSBucket(db, {
+      bucketName: 'file'
     });
   }
 }
