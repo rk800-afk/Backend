@@ -18,7 +18,7 @@
     "brand": "mers",
     "image": {
       "id": 2,
-      "filename": "..."
+      "filename": ""
     },
     "price": {
       "one": "String2",
@@ -32,7 +32,7 @@
     "brand": "audi",
     "image": {
       "id": 3,
-      "filename": "..."
+      "filename": ""
     },
     "price": {
       "one": "String3",
@@ -46,7 +46,7 @@
     "brand": "beha",
     "image": {
       "id": 4,
-      "filename": "..."
+      "filename": ""
     },
     "price": {
       "one": "String4",
