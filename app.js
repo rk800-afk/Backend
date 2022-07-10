@@ -29,7 +29,7 @@ const bootstrap = () => {
   // for parsing application/xwww-
   app.use(bodyParser.urlencoded({ extended: true }));
   //form-urlencoded
-//   app.use("/ground", express.static(path.join(__dirname, "/RentCardemo")));
+  //   app.use("/ground", express.static(path.join(__dirname, "/RentCardemo")));
 
   //    app.get('/style.css', function(req, res) {
   //      res.sendFile(__dirname + "/RentCardemo/styles/global/main.css");
@@ -45,129 +45,98 @@ const bootstrap = () => {
   // API'S
   require("./api")(app);
 
-    // app.use('/js', express.static(__dirname + 'public/js'))
-    // app.use('/img', express.static(__dirname + 'public/images'))
+  // app.use('/js', express.static(__dirname + 'public/js'))
+  // app.use('/img', express.static(__dirname + 'public/images'))
 
-  app.get('/rent', (_req, res) => {
-      res.sendFile(
-          path.resolve(
-              __dirname + '/RentCardemo/pages/rent.html',
-          )
-      );
+  app.get("/rent", (_req, res) => {
+    res.sendFile(path.resolve(__dirname + "/RentCardemo/pages/rent.html"));
   });
 
-  app.get('/js/index', (_req, res) => {
-    res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/js/index.js',
-        )
-    );
-});  
-
-app.get('/js/rent', (_req, res) => {
-    res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/js/rent.js',
-        )
-    );
-});
-  
-  app.get('/css/pages/rent', (_req, res) => {
-      res.sendFile(
-          path.resolve(
-              __dirname + '/RentCardemo/styles/pages/rent.css',
-          )
-      );
+  app.get("/js/index", (_req, res) => {
+    res.sendFile(path.resolve(__dirname + "/RentCardemo/js/index.js"));
   });
 
-app.get('/css/headerHamburger', (_req, res) => {
-    res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/js/headerHamburger.js',
-        )
-    );
-});
-
-
-  app.get('/css/global/main', (_req, res) => {
-      res.sendFile(
-          path.resolve(
-              __dirname + '/RentCardemo/styles/global/main.css',
-          )
-      );
+  app.get("/js/rent", (_req, res) => {
+    res.sendFile(path.resolve(__dirname + "/RentCardemo/js/rent.js"));
   });
 
-  app.get('/css/global/media', (_req, res) => {
+  app.get("/css/pages/rent", (_req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/styles/global/media.css',
-        )
+      path.resolve(__dirname + "/RentCardemo/styles/pages/rent.css")
     );
-});
+  });
 
-app.get('/css/global/normalize', (_req, res) => {
+  app.get("/css/headerHamburger", (_req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/styles/global/normalize.css',
-        )
+      path.resolve(__dirname + "/RentCardemo/js/headerHamburger.js")
     );
-});
+  });
 
-app.get('/css/global/variables', (_req, res) => {
+  app.get("/css/global/main", (_req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/styles/global/variables.css',
-        )
+      path.resolve(__dirname + "/RentCardemo/styles/global/main.css")
     );
-});
+  });
 
-app.get('/css/partials/header', (_req, res) => {
+  app.get("/css/global/media", (_req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/styles/partials/header.css',
-        )
+      path.resolve(__dirname + "/RentCardemo/styles/global/media.css")
     );
-});
+  });
 
-app.get('/css/partials/footer', (_req, res) => {
+  app.get("/css/global/normalize", (_req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/styles/partials/footer.css',
-        )
+      path.resolve(__dirname + "/RentCardemo/styles/global/normalize.css")
     );
-});
+  });
 
-app.get('/css/partials/sidebar', (_req, res) => {
+  app.get("/css/global/variables", (_req, res) => {
     res.sendFile(
-        path.resolve(
-            __dirname + '/RentCardemo/styles/partials/sidebar.css',
-        )
+      path.resolve(__dirname + "/RentCardemo/styles/global/variables.css")
     );
-});
+  });
 
-//     app.get('*', (_req, res) => {
-//         res.sendFile(
-//             path.resolve(
-//                 __dirname + '/RentCardemo/styles/global/normalize.css',
-//             )
-//         );
-//     });
+  app.get("/css/partials/header", (_req, res) => {
+    res.sendFile(
+      path.resolve(__dirname + "/RentCardemo/styles/partials/header.css")
+    );
+  });
 
-//     app.get('*', (_req, res) => {
-//         res.sendFile(
-//             path.resolve(
-//                 __dirname + '/RentCardemo/styles/global/variables.css',
-//             )
-//         );
-//     });
+  app.get("/css/partials/footer", (_req, res) => {
+    res.sendFile(
+      path.resolve(__dirname + "/RentCardemo/styles/partials/footer.css")
+    );
+  });
 
-//     app.get('*', (_req, res) => {
-//         res.sendFile(
-//             path.resolve(
-//                 __dirname + '/RentCardemo/styles/pages/*.css',
-//             )
-//         );
-//     });
+  app.get("/css/partials/sidebar", (_req, res) => {
+    res.sendFile(
+      path.resolve(__dirname + "/RentCardemo/styles/partials/sidebar.css")
+    );
+  });
+
+  //     app.get('*', (_req, res) => {
+  //         res.sendFile(
+  //             path.resolve(
+  //                 __dirname + '/RentCardemo/styles/global/normalize.css',
+  //             )
+  //         );
+  //     });
+
+  //     app.get('*', (_req, res) => {
+  //         res.sendFile(
+  //             path.resolve(
+  //                 __dirname + '/RentCardemo/styles/global/variables.css',
+  //             )
+  //         );
+  //     });
+
+  //     app.get('*', (_req, res) => {
+  //         res.sendFile(
+  //             path.resolve(
+  //                 __dirname + '/RentCardemo/styles/pages/*.css',
+  //             )
+  //         );
+  //     });
 
   server.listen(PORT, () => {
     console.log("Start", PORT);
