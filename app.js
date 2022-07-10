@@ -35,13 +35,13 @@ const bootstrap = () => {
     // API'S
     require('./api')(app)
 
-    app.get('*', (_req, res) => {
-        res.sendFile(
-            path.resolve(
-                __dirname + '/images',
-            )
-        );
-    });
+    // app.get('*', (_req, res) => {
+    //     res.sendFile(
+    //         path.resolve(
+    //             __dirname + '/images',
+    //         )
+    //     );
+    // });
 
     server.listen(PORT, () => {
         console.log("Start", PORT);
