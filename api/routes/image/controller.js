@@ -34,7 +34,7 @@ module.exports.createImage = async (req, res) => {
       });
       return
     }
-    const imgUrl = `http:localhost:4000/api/image/${newImage.filename}`
+    const imgUrl = `/api/image/${newImage.filename}`
 
     const cars = await Car.findByIdAndUpdate(
       req.params.carId,
